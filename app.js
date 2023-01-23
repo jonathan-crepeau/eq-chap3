@@ -44,4 +44,46 @@ function findSolution(target) {
     return find(1, "1");
 }
 
-console.log(findSolution(13));
+// console.log(findSolution(13));
+
+
+// SECTION count cows and chickens
+
+const printFarmInventory = (cows, chickens) => {
+    let cowString = String(cows);
+    while (cowString.length < 3) {
+        cowString = "0" + cowString;
+    }
+    console.log(cowString, 'Cows');
+    let chickenString = String(chickens);
+    while (chickenString.length < 3) {
+        chickenString = "0" + chickenString
+    }
+    console.log(chickenString, "Chickens");
+}
+
+// printFarmInventory(4, 11)
+
+// const threeDigitNum = (number, label) => {
+//     let numberString = String(number);
+//     while (numberString.length < 3) {
+//         numberString = "0" + numberString;
+//     }
+//     console.log(numberString, label);
+// }
+
+const zeroPad = (number, numOfDigits = 3) => {
+    let string = String(number);
+    while (string.length < numOfDigits) {
+        string = "0" + string;
+    }
+    return string;
+}
+
+const updatedFarmInventory = (cows, chickens, pigs) => {
+    console.log(`${zeroPad(cows)} Cows`);
+    console.log(`${zeroPad(chickens)} Chickens`);
+    console.log(`${zeroPad(pigs)} Pigs`);
+}
+
+updatedFarmInventory(11, 18, 22);
