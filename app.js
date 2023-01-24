@@ -86,4 +86,81 @@ const updatedFarmInventory = (cows, chickens, pigs) => {
     console.log(`${zeroPad(pigs)} Pigs`);
 }
 
-updatedFarmInventory(11, 18, 22);
+// updatedFarmInventory(11, 18, 22);
+
+
+// SECTION Pure Functions
+// NOTE A function that returns the same result if the same arguments are passed to said function:
+
+const multiply = (x, y) => {
+    return x * y;
+}
+
+// console.log(multiply(2, 7));
+// const sum = multiply(2, 7);
+// console.log(sum);
+
+
+// ANCHOR - End of Chapter Exercises
+
+// SECTION - Minimum:
+
+const min = (x, y) => {
+    return Math.min(x, y);
+}
+
+// console.log(min(2, 8));
+// console.log(min(2, -8));
+
+
+// SECTION - Recursion:
+// NOTE From Eloquent JS - Chap 3
+// NOTE - source(https://medium.datadriveninvestor.com/javascript-use-a-recursive-function-to-determine-if-a-given-number-is-even-72466d8a6e5b)
+
+function isEven(inputNum) {
+    if (inputNum === 0) {
+        return true;
+    } else if (inputNum === 1) {
+        return false;
+    } else if (inputNum > 0) {
+        return isEven(inputNum - 2);
+    } else {
+        return null;
+    }
+}
+
+
+// SECTION Bean Counting
+/*
+- Write a function, 'countBs', that takes a string as its only argument.
+- Return a number that indicates how many uppercase "B" characters there are in a string.
+*/
+
+function countBs(inputString) {
+    let bCount = 0;
+    for (let i = 0; i < inputString.length - 1; i++) {
+        if (inputString[i] === "B") {
+            bCount += 1;
+        }
+    }
+    console.log(bCount);
+}
+
+// countBs('BBC');
+// countBs('bbc');
+// countBs('Baby Got Back in Beverly Hills');
+
+const countChar = (inputString, char) => {
+    let count = 0;
+    for (let i = 0; i < inputString.length - 1; i++) {
+        if (inputString[i] === char) {
+            count += 1;
+        }
+    }
+    console.log(count);
+}
+
+countChar('Jonathan', 'a');
+countChar('Jonathan', 'J');
+countChar('Michele', 'b');
+countChar('Michele', 'm');
